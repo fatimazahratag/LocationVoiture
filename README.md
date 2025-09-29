@@ -17,7 +17,6 @@ It demonstrates car rental management, including car listings, adding cars, and 
 <img width="1877" height="860" alt="image" src="https://github.com/user-attachments/assets/3a60c0d6-8728-4dbf-8cb3-9605dd8bfb85" />
 <img width="762" height="494" alt="image" src="https://github.com/user-attachments/assets/88994840-1dac-4c09-8fc6-8406b9b4eb27" />
 <img width="1249" height="645" alt="image" src="https://github.com/user-attachments/assets/92cfcf1a-4b6f-4613-9cd6-02dac32d1f28" />
-![Uploading image.png…]()
 
 ## Technologies Used
 - ASP.NET Core
