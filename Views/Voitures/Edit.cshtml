@@ -1,0 +1,55 @@
+﻿@model LocationVoiture.Models.Voiture
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Modifier une Voiture</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="MarqueId" />
+
+    <div class="form-group">
+        <label>Marque actuelle</label>
+        <p class="form-control-plaintext">@Model.Marque?.Libelle</p>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Matricule"></label>
+        <input asp-for="Matricule" class="form-control" />
+        <span asp-validation-for="Matricule" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nbr_portes">Nombre de portes</label>
+        <input asp-for="Nbr_portes" class="form-control" />
+        <span asp-validation-for="Nbr_portes" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Nbr_places">Nombre de places</label>
+        <input asp-for="Nbr_places" class="form-control" />
+        <span asp-validation-for="Nbr_places" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Couleur"></label>
+        <input asp-for="Couleur" class="form-control" />
+        <span asp-validation-for="Couleur" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Photo_1">Photo (URL ou Base64)</label>
+        <input asp-for="Photo_1" class="form-control" />
+        <span asp-validation-for="Photo_1" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.PartialAsync("_ValidationScriptsPartial");
+    }
+}

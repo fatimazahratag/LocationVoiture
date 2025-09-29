@@ -1,0 +1,36 @@
+﻿@model LocationVoiture.ViewModels.VoitureAddVM
+
+<div class="container mt-4">
+    <h2>Ajouter une Voiture</h2>
+
+    <form method="post" asp-action="Add">
+        <div class="mb-3">
+            <label>Matricule</label>
+            <input asp-for="Matricule" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Nombre de Portes</label>
+            <input asp-for="Nbr_portes" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Nombre de Places</label>
+            <input asp-for="Nbr_places" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Couleur</label>
+            <input asp-for="Couleur" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Photo (URL)</label>
+            <input asp-for="Photo_1" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Marque</label>
+            <select asp-for="MarqueId" class="form-control" asp-items="@(new SelectList(ViewBag.Marques, "Id", "Libelle"))">
+                <option value="">-- Choisir une Marque --</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a href="/Voitures/Index" class="btn btn-secondary">Retour</a>
+    </form>
+</div>

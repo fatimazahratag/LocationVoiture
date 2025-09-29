@@ -1,0 +1,36 @@
+﻿@model List<LocationVoiture.Models.Voiture>
+
+<div class="container mt-4">
+    <h2>Liste des Voitures</h2>
+    <a href="/Voitures/Add" class="btn btn-success mb-3">Ajouter une Voiture</a>
+    <a href="/Marques/Add" class="btn btn-success mb-3">Ajouter une Marque</a>
+
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Matricule</th>
+                <th>Portes</th>
+                <th>Places</th>
+                <th>Couleur</th>
+                <th>Marque</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in Model)
+            {
+                <tr>
+                    <td>@v.Matricule</td>
+                    <td>@v.Nbr_portes</td>
+                    <td>@v.Nbr_places</td>
+                    <td>@v.Couleur</td>
+                    <td>@v.Marque?.Libelle</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@v.Id" class="btn btn-sm btn-primary">Modifier</a>
+                        <a asp-action="Delete" asp-route-id="@v.Id" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cette voiture ?')">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

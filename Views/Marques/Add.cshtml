@@ -1,0 +1,16 @@
+﻿@model LocationVoiture.ViewModels.MarqueAddVM
+
+<div class="container mt-5">
+    <h2 class="mb-4">Ajouter une Marque</h2>
+
+    <form asp-action="Add" method="post" class="w-50">
+        <div class="mb-3">
+            <label asp-for="Libelle" class="form-label">Libellé :</label>
+            <input asp-for="Libelle" class="form-control" />
+            <span asp-validation-for="Libelle" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>

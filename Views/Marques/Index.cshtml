@@ -1,0 +1,39 @@
+﻿@model List<LocationVoiture.Models.Marque>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Liste des Marques</h2>
+
+    <div class="mb-3">
+        <a href="/Marques/Add" class="btn btn-primary btn-sm">Ajouter une Marque</a>
+        <a href="/Voitures/Add" class="btn btn-success btn-sm">Ajouter une Voiture</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Libellé</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var marque in Model)
+                {
+                    <tr>
+                        <td>@marque.Id</td>
+                        <td>@marque.Libelle</td>
+                        <td>
+                            <a href="/Marques/Edit/@marque.Id" class="btn btn-warning btn-sm">Modifier</a>
+                            <a href="/Marques/Delete/@marque.Id"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Supprimer cette marque ?')">
+                                Supprimer
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
